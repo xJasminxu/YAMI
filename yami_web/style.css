@@ -1,0 +1,571 @@
+/* =========================================================
+   YAMI RAMEN & BBQ — Stylesheet
+   Design tokens live at the top as CSS custom properties.
+   Everything else references them — change a value here and
+   it updates the whole site.
+   ========================================================= */
+
+:root {
+  /* Color */
+  --black:      #121110;   /* page background — warm charcoal, like slate */
+  --panel:      #1c1a18;   /* card / panel background */
+  --panel-2:    #242120;   /* slightly lighter panel, for hover states */
+  --red:        #c4272e;   /* signature accent, from the logo */
+  --red-dim:    #7d1a1f;
+  --gold:       #b08d57;   /* bronze accent, from menu category bars */
+  --cream:      #f2eee6;   /* primary text on dark */
+  --muted:      #9c948a;   /* secondary text */
+  --line:       rgba(242, 238, 230, 0.12);
+
+  /* Type */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Layout */
+  --max-width: 1120px;
+  --nav-height: 76px;
+}
+
+/* ---------- Reset & base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.02em; }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- Layout helpers ---------- */
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.menu-head { max-width: 640px; margin-bottom: 3rem; }
+.menu-head h2 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 1rem; }
+.menu-note { color: var(--muted); font-size: 0.95rem; }
+.menu-download { margin-top: 1.5rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary { background: var(--red); color: var(--cream); }
+.btn-primary:hover { background: #d94048; }
+
+.btn-ghost { border-color: var(--line); color: var(--cream); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: rgba(18, 17, 16, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo { display: flex; align-items: center; gap: 0.65rem; }
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  font-size: 1.1rem;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+}
+.logo-text small {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+}
+.nav-links a { color: var(--cream); opacity: 0.85; transition: opacity 0.15s; }
+.nav-links a:hover { opacity: 1; }
+
+.nav-cta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--red);
+  color: var(--red) !important;
+  opacity: 1 !important;
+}
+.nav-cta:hover { background: var(--red); color: var(--cream) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.nav-toggle span { width: 24px; height: 2px; background: var(--cream); transition: transform 0.2s, opacity 0.2s; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 2rem 1.5rem;
+}
+
+/* Signature ambient element: soft moving "steam" gradients behind the hero text.
+   Kept subtle and slow so it reads as atmosphere, not decoration. */
+.hero-steam {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(196, 39, 46, 0.16), transparent 45%),
+    radial-gradient(circle at 75% 70%, rgba(176, 141, 87, 0.14), transparent 50%);
+  filter: blur(40px);
+  animation: drift 14s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(2%, -3%, 0) scale(1.08); }
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.hero-image {
+  padding: 2rem 0;
+  width: 80%;
+  position: relative;
+  align-self: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.hero-title {
+  font-size: clamp(4.5rem, 16vw, 9rem);
+  line-height: 0.9;
+  color: var(--cream);
+  text-shadow: 0 0 60px rgba(196, 39, 46, 0.25);
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 1.5rem auto 2.5rem;
+  max-width: 480px;
+}
+
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+.hero-scroll span {
+  width: 1px;
+  height: 28px;
+  background: var(--gold);
+  animation: scrollpulse 1.8s ease-in-out infinite;
+}
+@keyframes scrollpulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 4rem 0;
+}
+
+.about-text h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 1.25rem; }
+.about-text p { color: var(--muted); max-width: 46ch; }
+
+/* Two real photos stacked vertically, filling the right column
+   the same way the facts list used to. */
+.about-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-photo {
+  position: relative;
+  width: 120%;
+
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: flex-end;
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.5rem;
+}
+
+.tab-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tab-btn:hover { color: var(--cream); border-color: var(--muted); }
+.tab-btn.active { background: var(--gold); border-color: var(--gold); color: var(--black); font-weight: 700; }
+
+.panel { display: none; }
+.panel.active { display: block; animation: fadein 0.35s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* The gold category bar — this is the signature element lifted directly
+   from the printed menu's "MISO RAMEN 味噌ラーメン" style tags. */
+.category-bar {
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 2.5rem 0 1.5rem;
+}
+.category-bar:first-child { margin-top: 0; }
+.category-bar span { font-weight: 400; opacity: 0.75; text-transform: none; letter-spacing: 0; font-size: 0.8rem; }
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.item {
+  background: var(--panel);
+  padding: 1.5rem;
+  transition: background 0.15s ease;
+}
+.item:hover { background: var(--panel-2); }
+
+.item-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.item-top .code {
+  font-family: var(--font-mono);
+  color: var(--red);
+  font-size: 0.8rem;
+}
+.item-top h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  flex: 1;
+  min-width: 140px;
+}
+.item-top .price {
+  font-family: var(--font-mono);
+  color: var(--gold);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.item p { color: var(--muted); font-size: 0.9rem; }
+
+.extras-list {
+  border: 1px solid var(--line);
+}
+.extras-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.extras-list li:last-child { border-bottom: none; }
+.extras-list li span:last-child { font-family: var(--font-mono); color: var(--gold); }
+
+/* =========================================================
+   GALLERY (placeholders)
+   ========================================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.gallery-tile {
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, var(--panel) 0%, var(--panel-2) 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.gallery-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(242,238,230,0.03) 10px, rgba(242,238,230,0.03) 20px);
+}
+.gallery-tile::after {
+  content: attr(data-label);
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* =========================================================
+   VISIT / HOURS / LOCATION
+   ========================================================= */
+.visit-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.visit h2 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 2rem; }
+
+.hours { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+.hours td { padding: 0.75rem 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.hours td:last-child { text-align: right; font-family: var(--font-mono); color: var(--gold); }
+
+.contact-block { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-block strong { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+.contact-block a:hover { color: var(--gold); }
+
+.placeholder-flag {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--red);
+  border-left: 2px solid var(--red);
+  padding-left: 0.75rem;
+}
+
+/* Map: starts as a consent prompt (.map-consent), and is swapped for
+   .map-frame + <iframe> by script.js once the visitor clicks "Karte laden".
+   Keeping this a click-to-load gate is what avoids needing a cookie
+   banner just for an embedded map. */
+.map-placeholder {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.map-consent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  text-align: center;
+}
+.map-consent p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  max-width: 30ch;
+}
+
+.map-frame {
+  width: 100%;
+  height: 100%;
+}
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  /* Fakes a dark map to match the site instead of a bright white Google Maps panel */
+  filter: grayscale(0.35) invert(0.9) contrast(0.85) brightness(0.9) hue-rotate(180deg);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 3.5rem 1.5rem 2.5rem;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+.footer-tag { color: var(--muted); font-size: 0.9rem; }
+.footer-links { display: flex; gap: 1.5rem; font-size: 0.85rem; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { color: var(--muted); font-size: 0.8rem; font-family: var(--font-mono); margin-top: 1rem; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 860px) {
+  .about-inner, .visit-inner { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--black);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    transform: translateY(-130%);
+    transition: transform 0.25s ease;
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-toggle { display: flex; }
+  section { padding: 4rem 1.25rem; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAMI — Ramen & BBQ</title>
+  <meta name="description"
+    content="YAMI Ramen & BBQ — Asiatisches Restaurant mit Signature-Ramen, koreanischem BBQ und mehr.">
+
+  <!-- Fonts: Anton (display/headlines), Work Sans (body text), Space Mono (prices & item codes) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="logo">
+        <span class="logo-mark"><img src="images/noodles-in-a-bowl.svg" alt="Noodle Bowl Logo"></span>
+        <span class="logo-text">YAMI<small>RAMEN &amp; BBQ</small></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#menu">Speisekarte</a>
+        <a href="#about">Über uns</a>
+        <!-- <a href="#gallery">Galerie</a> -->
+        <a href="#visit">Öffnungszeiten</a>
+        <a class="nav-cta" href="tel:+4900000000000">Reservieren</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-steam" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">— Restaurant im asiatischen Stil —</p>
+      <h1 class="hero-title">YAMI</h1>
+      <p class="hero-sub">Signature-Ramen. Koreanisches BBQ. Gemacht, um geteilt zu werden.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Speisekarte ansehen</a>
+        <a href="#visit" class="btn btn-ghost">Anfahrt &amp; Öffnungszeiten</a>
+      </div>
+      <!-- Platzhalter für Hero Image 
+        <img class="hero-image" src="images/ramen3.jpg"
+          alt="Schüssel Miso Ramen mit Chashu, Ei, Frühlingszwiebeln und Nori" />-->
+    </div>
+  </section>
+
+  <!-- ============ ABOUT STRIP ============ -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="kicker">Unsere Küche</p>
+        <h2>Ramen mit Seele, BBQ mit Feuer</h2>
+        <p>Bei YAMI treffen hausgemachte Ramen-Brühen — Miso, Tonkotsu, Shoyu — auf koreanisches BBQ vom
+          Tischgrill, Bibimbap aus heißem Stein und Gyoza frisch aus der Pfanne. Jede Schüssel wird auf Bestellung
+          zubereitet, kein Fast Food, sondern echtes Handwerk.</p>
+      </div>
+      <div class="about-photos">
+        <div class="about-photo about-photo-1">
+          <img src="images/ramen3.jpg" alt="Schüssel Miso Ramen mit Chashu, Ei, Frühlingszwiebeln und Nori" />
+        </div>
+        <div class="about-photo about-photo-2">
+          <img src="images/kbbq2.jpg" alt="Koreanisches BBQ mit Rindfleisch, Gemüse und Beilagen" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section class="menu" id="menu">
+    <div class="menu-head">
+      <p class="kicker">Speisekarte</p>
+      <h2>Was wir servieren</h2>
+      <p class="menu-note">Preise inkl. MwSt. Alle Menüs kommen mit Banchan (Beilagen). Karte kann sich ändern — bitte
+        im Restaurant nachfragen.</p>
+      <a class="btn btn-ghost menu-download " href="images/yami-speisekarte.pdf" download>Speisekarte als PDF
+        herunterladen</a>
+    </div>
+
+    <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Menü-Kategorien">
+      <button class="tab-btn active" data-tab="ramen" role="tab" aria-selected="true">Ramen</button>
+      <button class="tab-btn" data-tab="bbq" role="tab" aria-selected="false">Korean BBQ</button>
+      <button class="tab-btn" data-tab="warm" role="tab" aria-selected="false">Warme Speisen</button>
+      <button class="tab-btn" data-tab="klein" role="tab" aria-selected="false">Kleinigkeiten &amp; Chicken</button>
+      <button class="tab-btn" data-tab="soup" role="tab" aria-selected="false">Suppen</button>
+      <button class="tab-btn" data-tab="dessert" role="tab" aria-selected="false">Dessert</button>
+      <button class="tab-btn" data-tab="drinks" role="tab" aria-selected="false">Getränke</button>
+
+    </div>
+
+    <div class="menu-panels" id="menuPanels">
+
+      <!-- RAMEN -->
+      <div class="panel active" data-panel="ramen">
+        <div class="category-bar">Miso Ramen <span>味噌ラーメン</span></div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">R1</span>
+              <h3>Ajitama Miso Ramen</h3><span class="price">13,90&nbsp;€</span>
+            </div>
+            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R2</span>
+              <h3>Karaage Miso Ramen</h3><span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Chicken Karaage, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R3</span>
+              <h3>Toriteri Miso Ramen</h3><span class="price">15,50&nbsp;€</span>
+            </div>
+            <p>Chicken Teriyaki, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R4</span>
+              <h3>Kakiage Vegi Miso Ramen</h3><span class="price">15,90&nbsp;€</span>
+            </div>
+            <p>Gemüsetempura, Frühlingszwiebeln, Zuckererbsen, Sojasprossen</p>
+          </article>
+        </div>
+
+        <div class="category-bar">Tonkotsu Ramen <span>豚骨ラーメン</span></div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">R5</span>
+              <h3>Ajitama Tonkotsu Ramen</h3><span class="price">13,90&nbsp;€</span>
+            </div>
+            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R6</span>
+              <h3>Butatama Tonkotsu Ramen</h3><span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Mariniertes Rindfleisch, 1 halbes Ei, Frühlingszwiebeln, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R7</span>
+              <h3>Karaage Tan Tan Men</h3><span class="price">15,90&nbsp;€</span>
+            </div>
+            <p>Chicken Karaage, 2 halbe Eier, Frühlingszwiebeln, Pak Choi, Sojasprossen — Sesampaste trifft Chiliöl</p>
+          </article>
+        </div>
+
+        <div class="category-bar">Shoyu Ramen <span>醤油ラーメン</span></div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">R8</span>
+              <h3>Ajitama Shoyu Ramen</h3><span class="price">13,50&nbsp;€</span>
+            </div>
+            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">R9</span>
+              <h3>Tokio-Shoyu Ramen</h3><span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Rindfleisch-Chashu, 1 halbes Ei, Wakame, Frühlingszwiebeln, Nori, Pak Choi, Sojasprossen, Narutomaki</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">V1</span>
+              <h3>Vegetarische Ramen</h3><span class="price">11,90&nbsp;€</span>
+            </div>
+            <p>Ohne Fleisch — auf Anfrage in jeder Brühen-Variante</p>
+          </article>
+        </div>
+
+        <div class="category-bar">Spezial-Bratnudeln</div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">W9</span>
+              <h3>Gebratene Udon-Nudeln</h3><span class="price">12,80&nbsp;/&nbsp;14,80&nbsp;€</span>
+            </div>
+            <p>Vegetarisch oder mit Rind-/Hühnerfleisch, verschiedene Gemüsesorten — frisch im Wok</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W10</span>
+              <h3>Sichuan Noodles</h3><span class="price">14,80&nbsp;€</span>
+            </div>
+            <p>Rind- oder Hühnerfleisch, rote Zwiebeln, Sojasprossen, Pak Choi, türkische Peperoni (scharf)</p>
+          </article>
+        </div>
+
+        <div class="category-bar">Extras</div>
+        <ul class="extras-list">
+          <li><span>Ajitama Eier</span><span>2,00&nbsp;€</span></li>
+          <li><span>Mais</span><span>1,00&nbsp;€</span></li>
+          <li><span>Ebi Fry (2 St.)</span><span>3,10&nbsp;€</span></li>
+          <li><span>Tofu (4 St.)</span><span>1,80&nbsp;€</span></li>
+        </ul>
+      </div>
+
+      <!-- KOREAN BBQ -->
+      <div class="panel" data-panel="bbq">
+        <div class="category-bar">Korean BBQ <span>jedes Menü mit Banchan</span></div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">B1</span>
+              <h3>Menü 1 — Must Try</h3><span class="price">28,00&nbsp;€</span>
+            </div>
+            <p>Perfekter Einstieg ins koreanische BBQ — Black Angus Beef Cut &amp; Pork Belly Trio</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">B2</span>
+              <h3>Menü 2 — Advanced Flavors</h3><span class="price">33,00&nbsp;€</span>
+            </div>
+            <p>5 ausgewählte Prime Cuts von Wagyu und Black Angus Beef, außerdem marinierte Cuts</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">B3</span>
+              <h3>Menü 3 — Surf and Turf</h3><span class="price">33,00&nbsp;€</span>
+            </div>
+            <p>Jakobsmuschel, Garnelen, Lachs, Tintenfisch</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- WARME SPEISEN -->
+      <div class="panel" data-panel="warm">
+        <div class="category-bar">Warme Speisen</div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">W1</span>
+              <h3>Bibimbap mit Beef &amp; Bandol Signature-Sauce</h3><span class="price">16,90&nbsp;€</span>
+            </div>
+            <p>Rindfleisch in hausgemachter Signature-Sauce, Crunch-Gemüse, Spiegelei, heißer Stein</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W2</span>
+              <h3>Bibimbap mit Tofu (vegan)</h3><span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Gebratener Tofu, buntes Gemüse, würzige Sauce — komplett vegan</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W3</span>
+              <h3>Traditionelles Bibimbap</h3><span class="price">11,90&nbsp;€</span>
+            </div>
+            <p>Frisches Gemüse, Nori, gebratenes Ei, knusprige Reis-Kruste aus dem heißen Stein</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W4</span>
+              <h3>Bulgogi</h3><span class="price">15,90&nbsp;€</span>
+            </div>
+            <p>Klassisch mariniertes koreanisches Rindfleisch</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W5</span>
+              <h3>Kimchi Fried Rice</h3><span class="price">13,90&nbsp;€</span>
+            </div>
+            <p>Gebratener Reis mit Kimchi</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W6</span>
+              <h3>Kimchi Jjigae</h3><span class="price">14,90&nbsp;€</span>
+            </div>
+            <p>Klassischer scharfer Kimchi-Eintopf</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W7</span>
+              <h3>Haemul Sundubu Jjigae</h3><span class="price">18,90&nbsp;€</span>
+            </div>
+            <p>Scharfer Meeresfrüchte-Tofu-Eintopf</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">W8</span>
+              <h3>Doenjang Jjigae</h3><span class="price">13,90&nbsp;€</span>
+            </div>
+            <p>Herzhafter Sojabohnenpasten-Eintopf</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- KLEINIGKEITEN & FRIED CHICKEN -->
+      <div class="panel" data-panel="klein">
+        <div class="category-bar">Kleinigkeiten</div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">K1</span>
+              <h3>Edamame</h3><span class="price">4,00&nbsp;€</span>
+            </div>
+            <p>Gekochte Sojabohnen</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K2</span>
+              <h3>Wakame</h3><span class="price">4,00&nbsp;€</span>
+            </div>
+            <p>Algensalat</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K3</span>
+              <h3>Tteokbokki</h3><span class="price">8,90&nbsp;€</span>
+            </div>
+            <p>Reiskuchen in cremig-scharfer Soße, mit Fischkuchen, Ei, Frühlingszwiebeln</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4</span>
+              <h3>Gyoza — japanische gegrillte Teigtaschen</h3><span class="price">ab 4,90&nbsp;€</span>
+            </div>
+            <p>Hähnchen 5,90&nbsp;€ · Veggi 5,20&nbsp;€ · Garnele 6,10&nbsp;€ · Gemüse-Spinat 4,90&nbsp;€ (6 St.)</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K5</span>
+              <h3>Teriyaki-Hähnchenspieße</h3><span class="price">5,20&nbsp;€</span>
+            </div>
+            <p>Mariniert und glasiert in süßer, herzhafter Teriyaki-Sauce</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K6</span>
+              <h3>Tempura</h3><span class="price">5,20&nbsp;€</span>
+            </div>
+            <p>Garnelen-Tempura, leichter knuspriger Teig (2 Stück)</p>
+          </article>
+        </div>
+
+        <div class="category-bar">Fried Chicken <span>Drumettes · 5 St. 7,90&nbsp;€ / 8 St. 11,90&nbsp;€</span></div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">F1</span>
+              <h3>Original Fried Chicken</h3>
+            </div>
+            <p>Golden frittiert, crunchy außen, saftig innen — der Klassiker</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">F2</span>
+              <h3>Red Chili Cheese Powder</h3>
+            </div>
+            <p>Eingerollt in feurigem Chili-Cheese-Powder</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">F3</span>
+              <h3>Honey-Mustard Chicken</h3>
+            </div>
+            <p>Süß trifft pikant — goldene Honey-Senf-Glaze</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">F4</span>
+              <h3>Golden Curry Chicken</h3>
+            </div>
+            <p>Aromatisches Curry-Powder auf crispy Chicken</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">F5</span>
+              <h3>Thai-Chili Chicken</h3>
+            </div>
+            <p>Thailändische Chili-Würze</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- SUPPEN -->
+      <div class="panel" data-panel="soup">
+        <div class="category-bar">Soup</div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">S1</span>
+              <h3>Scharfe Rindfleischsuppe</h3><span class="price">12,90&nbsp;€</span>
+            </div>
+            <p>Würzig, feurig, sättigend — Rindfleisch, Gemüse &amp; Power-Brühe</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">S2</span>
+              <h3>Algensuppe</h3><span class="price">4,20&nbsp;€</span>
+            </div>
+            <p>Leicht &amp; gesund — frische Algen in klarer Brühe</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">S3</span>
+              <h3>Kimchi-Tofu-Suppe</h3><span class="price">9,90&nbsp;€</span>
+            </div>
+            <p>Spicy Kimchi, Tofu &amp; Gemüse in heißer Brühe — mit einer Portion Reis</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="panel" data-panel="dessert">
+        <div class="category-bar">Nachtisch</div>
+        <div class="item-grid">
+          <article class="item">
+            <div class="item-top"><span class="code">N1</span>
+              <h3>Mochi-Eis</h3><span class="price">4,50&nbsp;€</span>
+            </div>
+            <p>Kokos, Matcha oder Mango</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">N2</span>
+              <h3>Matcha / Sesam Eis</h3><span class="price">4,50&nbsp;€</span>
+            </div>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">N3</span>
+              <h3>Mango-Pudding</h3><span class="price">3,90&nbsp;€</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+
+      <div class="panel" data-panel="drinks">
+        <div class="category-bar">Getränke</div>
+        <ul class="extras-list">
+          <li><span>Klassische Softgetränke</span><span>4,50&nbsp;€</span></li>
+          <li><span>Hausgemachte Limo</span><span>5,90&nbsp;€</span></li>
+          <li><span>Grüner / Jasmin Tee</span><span>2,50&nbsp;€</span></li>
+          <li><span>Bier vom Fass (0,3&nbsp;L)</span><span>3,60&nbsp;€</span></li>
+          <li><span>Cocktails mit Alkohol</span><span>7,90&nbsp;€</span></li>
+          <li><span>Soju</span><span>12,80&nbsp;€ / Fl.</span></li>
+          <li><span>Rotwein (0,2&nbsp;L)</span><span>5,90&nbsp;€</span></li>
+          <li><span>Weißwein (0,2&nbsp;L)</span><span>5,90&nbsp;€</span></li>
+        </ul>
+        <p class="menu-note">Vollständige Getränkekarte im Restaurant erhältlich.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ GALLERY (placeholders) ============ 
+  <section class="gallery" id="gallery">
+    <div class="menu-head">
+      <p class="kicker">Impressionen</p>
+      <h2>Fotos folgen in Kürze</h2>
+      <p class="menu-note">Diese Kacheln sind Platzhalter — echte Fotos von Gerichten und Restaurant werden hier
+        eingefügt.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-tile" data-label="Ramen"></div>
+      <div class="gallery-tile" data-label="BBQ Grill"></div>
+      <div class="gallery-tile" data-label="Innenraum"></div>
+      <div class="gallery-tile" data-label="Gyoza"></div>
+      <div class="gallery-tile" data-label="Bibimbap"></div>
+      <div class="gallery-tile" data-label="Cocktails"></div>
+    </div>
+  </section>
+  -->
+
+  <!-- ============ VISIT / HOURS / LOCATION ============ -->
+  <section class="visit" id="visit">
+    <div class="visit-inner">
+      <div class="visit-col">
+        <p class="kicker">Besuchen Sie uns</p>
+        <h2>Öffnungszeiten &amp; Lage</h2>
+
+        <table class="hours">
+          <tr>
+            <td>Montag – Sonntag</td>
+            <td>11:30 – 22:30</td>
+          </tr>
+
+        </table>
+
+        <div class="contact-block">
+          <p><strong>Adresse</strong><br>Sudetenstraße 8, 87600 Kaufbeuren</p>
+          <p><strong>Telefon</strong><br><a href="tel:+4983419665699">0821 9665699</a></p>
+          <p><strong>Reservierung</strong><br>Für BBQ-Tische empfehlen wir eine Reservierung, besonders am Wochenende.
+          </p>
+        </div>
+      </div>
+
+      <div class="visit-map">
+        <!-- The map only loads after a click, so no Google cookies are set
+             just from visiting the page. data-address feeds the embed URL
+             in script.js — update it once you have a real address. -->
+        <div class="map-placeholder" id="mapPlaceholder" data-address="Sudetenstraße 8, 87600 Kaufbeuren">
+          <div class="map-consent">
+            <p>Hier wird eine Karte von Google Maps geladen. Dabei werden Daten an Google übertragen und Cookies
+              gesetzt.</p>
+            <button class="btn btn-primary" id="loadMapBtn" type="button">Karte laden</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-mark"><img src="images/noodles-in-a-bowl.svg" alt="Noodle Bowl Logo"></span>
+        <span class="logo-text">YAMI<small>RAMEN &amp; BBQ</small></span>
+      </div>
+      <p class="footer-tag">Restaurant im asiatischen Stil — Signature-Ramen &amp; Korean BBQ</p>
+      <nav class="footer-links">
+        <a href="#menu">Speisekarte</a>
+        <a href="#about">Über uns</a>
+        <a href="#visit">Öffnungszeiten</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> YAMI Ramen &amp; BBQ. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
