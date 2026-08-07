@@ -87,3 +87,57 @@ if (localStorage.getItem(MAPS_CONSENT_KEY) === 'accepted') {
     loadMap();
   });
 }
+
+// ---------- 4) Cookie consent banner ----------
+// Nothing external loads before a choice is made. "Alle akzeptieren" fetches
+// Google Fonts (the only thing on this page that transfers data to a third
+// party on every visit); "Nur notwendige" keeps the local system font stack.
+// The choice itself is stored in localStorage, which counts as technically
+// necessary and needs no consent. Google Maps has its own separate gate
+// above and isn't affected by this banner either way.
+const COOKIE_CONSENT_KEY = 'yami_cookie_consent'; // 'all' | 'necessary'
+const cookieBanner = document.getElementById('cookieBanner');
+
+function loadGoogleFonts() {
+  if (document.getElementById('google-fonts-link')) return; // already loaded
+
+  const preconnect1 = document.createElement('link');
+  preconnect1.rel = 'preconnect';
+  preconnect1.href = 'https://fonts.googleapis.com';
+
+  const preconnect2 = document.createElement('link');
+  preconnect2.rel = 'preconnect';
+  preconnect2.href = 'https://fonts.gstatic.com';
+  preconnect2.crossOrigin = 'anonymous';
+
+  const fontStylesheet = document.createElement('link');
+  fontStylesheet.id = 'google-fonts-link';
+  fontStylesheet.rel = 'stylesheet';
+  fontStylesheet.href =
+    'https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap';
+
+  document.head.append(preconnect1, preconnect2, fontStylesheet);
+}
+
+function applyCookieConsent(choice) {
+  localStorage.setItem(COOKIE_CONSENT_KEY, choice);
+  if (choice === 'all') loadGoogleFonts();
+  cookieBanner.hidden = true;
+}
+
+const savedCookieConsent = localStorage.getItem(COOKIE_CONSENT_KEY);
+if (savedCookieConsent === 'all') {
+  loadGoogleFonts();
+} else if (!savedCookieConsent) {
+  cookieBanner.hidden = false;
+}
+
+document.getElementById('cookieAccept').addEventListener('click', () => applyCookieConsent('all'));
+document.getElementById('cookieDecline').addEventListener('click', () => applyCookieConsent('necessary'));
+
+// Footer link lets visitors reopen the banner any time to change their mind —
+// withdrawing consent has to be as easy as giving it.
+document.getElementById('cookieSettingsLink').addEventListener('click', (event) => {
+  event.preventDefault();
+  cookieBanner.hidden = false;
+});

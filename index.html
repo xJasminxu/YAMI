@@ -8,12 +8,10 @@
   <meta name="description"
     content="YAMI Ramen & BBQ — Asiatisches Restaurant mit Signature-Ramen, koreanischem BBQ und mehr.">
 
-  <!-- Fonts: Anton (display/headlines), Work Sans (body text), Space Mono (prices & item codes) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <!-- Fonts: Anton (display/headlines), Work Sans (body text), Space Mono (prices & item codes).
+       Loaded from Google Fonts, which transfers the visitor's IP to Google — so this is only
+       injected by script.js once cookie consent ("Alle akzeptieren") is given. Until then the
+       page falls back to the system font stack defined in style.css. -->
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -88,8 +86,9 @@
     <div class="menu-head">
       <p class="kicker">Speisekarte</p>
       <h2>Was wir servieren</h2>
-      <p class="menu-note">Preise inkl. MwSt. Alle Menüs kommen mit Banchan (Beilagen). Karte kann sich ändern — bitte
-        im Restaurant nachfragen.</p>
+      <p class="menu-note">Preise inkl. MwSt. Korean-BBQ-Menüs kommen mit Banchan (Beilagen). Allergene &amp;
+        Zusatzstoffe sind bei den Gerichten als Kürzel angegeben, die vollständige Legende steht am Ende der Karte.
+        Karte kann sich ändern — bitte im Restaurant nachfragen.</p>
       <a class="btn btn-ghost menu-download " href="assets/yami-speisekarte.pdf" download>Speisekarte als PDF
         herunterladen</a>
     </div>
@@ -110,94 +109,82 @@
       <!-- RAMEN -->
       <div class="panel active" data-panel="ramen">
         <div class="category-bar">Miso Ramen <span>味噌ラーメン</span></div>
+        <p class="category-desc">Traditionelle japanische Brühe mit würziger fermentierter Sojabohnen-Paste.</p>
         <div class="item-grid">
           <article class="item">
             <div class="item-top"><span class="code">R1</span>
               <h3>Ajitama Miso Ramen</h3><span class="price">13,90&nbsp;€</span>
             </div>
-            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+            <p>Rindfleisch oder Hühnerfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+            <p class="allergens">Allergene: A, C, D, F, K, N, 6, 10</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">R2</span>
-              <h3>Karaage Miso Ramen</h3><span class="price">14,90&nbsp;€</span>
+              <h3>Ramen mit Garnelen-Tempura</h3><span class="price">14,90&nbsp;€</span>
             </div>
-            <p>Chicken Karaage, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+            <p>Garnelen-Tempura, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+            <p class="allergens">Allergene: A, B, C, D, F, K, N, 6, 10</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">R3</span>
-              <h3>Toriteri Miso Ramen</h3><span class="price">15,50&nbsp;€</span>
+              <h3>Toriteri Miso Ramen</h3><span class="price">15,90&nbsp;€</span>
             </div>
             <p>Chicken Teriyaki, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+            <p class="allergens">Allergene: A, C, D, F, K, N, 6, 10</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">R4</span>
-              <h3>Kakiage Vegi Miso Ramen</h3><span class="price">15,90&nbsp;€</span>
+              <h3>Karaage Miso Ramen</h3><span class="price">14,90&nbsp;€</span>
             </div>
-            <p>Gemüsetempura, Frühlingszwiebeln, Zuckererbsen, Sojasprossen</p>
+            <p>Chicken Karaage, 1 halbes Ei, Frühlingszwiebeln, Pak Choi, Sojasprossen</p>
+            <p class="allergens">Allergene: A, C, F, K, 6, 10</p>
           </article>
         </div>
 
         <div class="category-bar">Tonkotsu Ramen <span>豚骨ラーメン</span></div>
+        <p class="category-desc">Kräftige, vollmundige und cremige Brühe aus Schweineknochen mit tiefem Umami-Geschmack.
+        </p>
         <div class="item-grid">
           <article class="item">
             <div class="item-top"><span class="code">R5</span>
               <h3>Ajitama Tonkotsu Ramen</h3><span class="price">13,90&nbsp;€</span>
             </div>
-            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">R6</span>
-              <h3>Butatama Tonkotsu Ramen</h3><span class="price">14,90&nbsp;€</span>
-            </div>
-            <p>Mariniertes Rindfleisch, 1 halbes Ei, Frühlingszwiebeln, Sojasprossen</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">R7</span>
-              <h3>Karaage Tan Tan Men</h3><span class="price">15,90&nbsp;€</span>
-            </div>
-            <p>Chicken Karaage, 2 halbe Eier, Frühlingszwiebeln, Pak Choi, Sojasprossen — Sesampaste trifft Chiliöl</p>
+            <p>Rindfleisch oder Hühnerfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+            <p class="allergens">Allergene: A, C, D, F, K, N, 6, 10</p>
           </article>
         </div>
 
         <div class="category-bar">Shoyu Ramen <span>醤油ラーメン</span></div>
+        <p class="category-desc">Würzig aber leichte Brühe auf Basis von Sojasauce.</p>
         <div class="item-grid">
           <article class="item">
-            <div class="item-top"><span class="code">R8</span>
+            <div class="item-top"><span class="code">R6</span>
               <h3>Ajitama Shoyu Ramen</h3><span class="price">13,50&nbsp;€</span>
             </div>
-            <p>Rindfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+            <p>Rindfleisch oder Hühnerfleisch-Chashu, 2 halbe Eier, Frühlingszwiebeln, Nori, Sojasprossen</p>
+            <p class="allergens">Allergene: A, C, D, F, K, N, 6, 10</p>
           </article>
           <article class="item">
-            <div class="item-top"><span class="code">R9</span>
-              <h3>Tokio-Shoyu Ramen</h3><span class="price">14,90&nbsp;€</span>
+            <div class="item-top"><span class="code">R7</span>
+              <h3>Vegetarische Ramen ohne Fleisch</h3><span class="price">11,90&nbsp;€</span>
             </div>
-            <p>Rindfleisch-Chashu, 1 halbes Ei, Wakame, Frühlingszwiebeln, Nori, Pak Choi, Sojasprossen, Narutomaki</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">V1</span>
-              <h3>Vegetarische Ramen</h3><span class="price">11,90&nbsp;€</span>
-            </div>
-            <p>Ohne Fleisch — auf Anfrage in jeder Brühen-Variante</p>
+            <p>In klarer Brühe gekocht</p>
+            <p class="allergens">Allergene: A, F, I, K, 6, 10</p>
           </article>
         </div>
 
         <div class="category-bar">Spezial-Bratnudeln</div>
         <div class="item-grid">
           <article class="item">
-            <div class="item-top"><span class="code">W9</span>
-              <h3>Gebratene Udon-Nudeln</h3><span class="price">12,80&nbsp;/&nbsp;14,80&nbsp;€</span>
-            </div>
-            <p>Vegetarisch oder mit Rind-/Hühnerfleisch, verschiedene Gemüsesorten — frisch im Wok</p>
-          </article>
-          <article class="item">
             <div class="item-top"><span class="code">W10</span>
               <h3>Sichuan Noodles</h3><span class="price">14,80&nbsp;€</span>
             </div>
             <p>Rind- oder Hühnerfleisch, rote Zwiebeln, Sojasprossen, Pak Choi, türkische Peperoni (scharf)</p>
+            <p class="allergens">Allergene: A, F, I, J, K, 6, 10</p>
           </article>
         </div>
 
-        <div class="category-bar">Extras</div>
+        <div class="category-bar">Extras <span>müssen mit der Erstbestellung mitbestellt werden</span></div>
         <ul class="extras-list">
           <li><span>Ajitama Eier</span><span>2,00&nbsp;€</span></li>
           <li><span>Mais</span><span>1,00&nbsp;€</span></li>
@@ -208,27 +195,55 @@
 
       <!-- KOREAN BBQ -->
       <div class="panel" data-panel="bbq">
-        <div class="category-bar">Korean BBQ <span>jedes Menü mit Banchan</span></div>
+        <div class="category-bar">Korean BBQ <span>jedes Menü kommt mit Banchan: Salat / Kimchi / Maiskäse /
+            Rettich</span></div>
         <div class="item-grid">
           <article class="item">
             <div class="item-top"><span class="code">B1</span>
-              <h3>Menü 1 — Must Try</h3><span class="price">28,00&nbsp;€</span>
+              <h3>Menü 1</h3><span class="price">28,00&nbsp;€ p.&nbsp;P.</span>
             </div>
-            <p>Perfekter Einstieg ins koreanische BBQ — Black Angus Beef Cut &amp; Pork Belly Trio</p>
+            <p>Roastbeef · Hotpot Beef mit Pfeffersoße · Iberisches Schweinefleisch (Signature Dish) ·
+              Hühnerfleisch mit Zitronengras mariniert · Schweinebauchfleisch, dick geschnitten</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">B2</span>
-              <h3>Menü 2 — Advanced Flavors</h3><span class="price">33,00&nbsp;€</span>
+              <h3>Menü 2</h3><span class="price">33,00&nbsp;€ p.&nbsp;P.</span>
             </div>
-            <p>5 ausgewählte Prime Cuts von Wagyu und Black Angus Beef, außerdem marinierte Cuts</p>
+            <p>Entrecôte · Roastbeef · Steakhüfte / Rumpsteak · Beef Rippenfleisch (Short Ribs) · Hotpot Beef mit
+              Pfeffersoße (Chuck Roast)</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">B3</span>
-              <h3>Menü 3 — Surf and Turf</h3><span class="price">33,00&nbsp;€</span>
+              <h3>Menü 3</h3><span class="price">35,00&nbsp;€ p.&nbsp;P.</span>
             </div>
-            <p>Jakobsmuschel, Garnelen, Lachs, Tintenfisch</p>
+            <p>Entrecôte · Roastbeef · Steakhüfte / Rumpsteak · Garnelen · Lachs (Sashimi-Qualität) · Tintenfisch</p>
           </article>
         </div>
+        <p class="category-desc">Selbst grillen. Frisch genießen. Gemeinsam erleben.</p>
+
+        <div class="category-bar">Nachbestellen</div>
+        <p class="subhead">Rindfleisch</p>
+        <ul class="extras-list">
+          <li><span>Entrecôte</span><span>9,00&nbsp;€</span></li>
+          <li><span>Roastbeef Südamerika</span><span>9,00&nbsp;€</span></li>
+          <li><span>Steakhüfte Beef, Rumpsteak</span><span>9,00&nbsp;€</span></li>
+          <li><span>Beef Rippenfleisch, Short Ribs</span><span>9,00&nbsp;€</span></li>
+          <li><span>Rind Nackenfleisch, Chuck Roast</span><span>9,00&nbsp;€</span></li>
+          <li><span>Hotpot Beef mit Pfeffersoße</span><span>9,00&nbsp;€</span></li>
+        </ul>
+        <p class="subhead">Hühner- &amp; Schweinefleisch</p>
+        <ul class="extras-list">
+          <li><span>Hühnerfleisch mit Zitronengras mariniert</span><span>7,00&nbsp;€</span></li>
+          <li><span>Marinierte Schweinenackenfleisch</span><span>7,00&nbsp;€</span></li>
+          <li><span>Schweinebauchfleisch, dick geschnitten</span><span>7,00&nbsp;€</span></li>
+        </ul>
+        <p class="subhead">Meeresfrüchte &amp; Gemüse</p>
+        <ul class="extras-list">
+          <li><span>White Tiger Garnelen</span><span>9,00&nbsp;€</span></li>
+          <li><span>Lachs, Sashimi-Qualität</span><span>9,00&nbsp;€</span></li>
+          <li><span>Jacobsmuschel</span><span>9,00&nbsp;€</span></li>
+          <li><span>Gemischtes Gemüse</span><span>8,00&nbsp;€</span></li>
+        </ul>
       </div>
 
       <!-- WARME SPEISEN -->
@@ -237,51 +252,18 @@
         <div class="item-grid">
           <article class="item">
             <div class="item-top"><span class="code">W1</span>
-              <h3>Bibimbap mit Beef &amp; Bandol Signature-Sauce</h3><span class="price">16,90&nbsp;€</span>
+              <h3>Bibimbap mit Beef &amp; Bandol Signatur-Sauce</h3><span class="price">16,90&nbsp;€</span>
             </div>
-            <p>Rindfleisch in hausgemachter Signature-Sauce, Crunch-Gemüse, Spiegelei, heißer Stein</p>
+            <p>Saftiges Rindfleisch in unserer hausgemachten Signature-Sauce, frisches Crunch-Gemüse und ein perfekt
+              gebratenes Spiegelei — serviert auf heißem Stein für den ultimativen Flavor-Boost</p>
+            <p class="allergens">Allergene: C, N, 2, 5, 15</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">W2</span>
               <h3>Bibimbap mit Tofu (vegan)</h3><span class="price">14,90&nbsp;€</span>
             </div>
-            <p>Gebratener Tofu, buntes Gemüse, würzige Sauce — komplett vegan</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W3</span>
-              <h3>Traditionelles Bibimbap</h3><span class="price">11,90&nbsp;€</span>
-            </div>
-            <p>Frisches Gemüse, Nori, gebratenes Ei, knusprige Reis-Kruste aus dem heißen Stein</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W4</span>
-              <h3>Bulgogi</h3><span class="price">15,90&nbsp;€</span>
-            </div>
-            <p>Klassisch mariniertes koreanisches Rindfleisch</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W5</span>
-              <h3>Kimchi Fried Rice</h3><span class="price">13,90&nbsp;€</span>
-            </div>
-            <p>Gebratener Reis mit Kimchi</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W6</span>
-              <h3>Kimchi Jjigae</h3><span class="price">14,90&nbsp;€</span>
-            </div>
-            <p>Klassischer scharfer Kimchi-Eintopf</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W7</span>
-              <h3>Haemul Sundubu Jjigae</h3><span class="price">18,90&nbsp;€</span>
-            </div>
-            <p>Scharfer Meeresfrüchte-Tofu-Eintopf</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">W8</span>
-              <h3>Doenjang Jjigae</h3><span class="price">13,90&nbsp;€</span>
-            </div>
-            <p>Herzhafter Sojabohnenpasten-Eintopf</p>
+            <p>Saftiger gebratener Tofu, buntes Gemüse &amp; würzige Sauce — komplett vegan, komplett Soulfood</p>
+            <p class="allergens">Allergene: N, F, O, 2, 5, 15</p>
           </article>
         </div>
       </div>
@@ -295,70 +277,99 @@
               <h3>Edamame</h3><span class="price">4,00&nbsp;€</span>
             </div>
             <p>Gekochte Sojabohnen</p>
+            <p class="allergens">Allergene: F</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">K2</span>
-              <h3>Wakame</h3><span class="price">4,00&nbsp;€</span>
+              <h3>Wakame</h3><span class="price">4,90&nbsp;€</span>
             </div>
             <p>Algensalat</p>
+            <p class="allergens">Allergene: F</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">K3</span>
               <h3>Tteokbokki</h3><span class="price">8,90&nbsp;€</span>
             </div>
-            <p>Reiskuchen in cremig-scharfer Soße, mit Fischkuchen, Ei, Frühlingszwiebeln</p>
+            <p>Reiskuchen in cremig-scharfer Soße mit Fischkuchen, Ei, Frühlingszwiebeln</p>
+            <p class="allergens">Allergene: C, D, F</p>
           </article>
           <article class="item">
-            <div class="item-top"><span class="code">K4</span>
-              <h3>Gyoza — japanische gegrillte Teigtaschen</h3><span class="price">ab 4,90&nbsp;€</span>
+            <div class="item-top"><span class="code">K4a</span>
+              <h3>Gyoza mit Gemüse</h3><span class="price">4&nbsp;St. / 5,90&nbsp;€</span>
             </div>
-            <p>Hähnchen 5,90&nbsp;€ · Veggi 5,20&nbsp;€ · Garnele 6,10&nbsp;€ · Gemüse-Spinat 4,90&nbsp;€ (6 St.)</p>
+            <p class="allergens">Allergene: A, F</p>
           </article>
           <article class="item">
-            <div class="item-top"><span class="code">K5</span>
-              <h3>Teriyaki-Hähnchenspieße</h3><span class="price">5,20&nbsp;€</span>
+            <div class="item-top"><span class="code">K4b</span>
+              <h3>Gyoza mit Rindfleisch</h3><span class="price">4&nbsp;St. / 5,90&nbsp;€</span>
             </div>
-            <p>Mariniert und glasiert in süßer, herzhafter Teriyaki-Sauce</p>
+            <p class="allergens">Allergene: A, F</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4c</span>
+              <h3>Gyoza mit Tintenfisch</h3><span class="price">4&nbsp;St. / 5,90&nbsp;€</span>
+            </div>
+            <p class="allergens">Allergene: A, F, N</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4d</span>
+              <h3>Gyoza mit Entenfleisch</h3><span class="price">4&nbsp;St. / 5,90&nbsp;€</span>
+            </div>
+            <p class="allergens">Allergene: A, F</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4e</span>
+              <h3>Gyoza mit Gemüse</h3><span class="price">6&nbsp;St. / 4,90&nbsp;€</span>
+            </div>
+            <p class="allergens">Allergene: A, F</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4f</span>
+              <h3>Gyoza mit Hühnerfleisch</h3><span class="price">6&nbsp;St. / 5,20&nbsp;€</span>
+            </div>
+            <p class="allergens">Allergene: A, F</p>
+          </article>
+          <article class="item">
+            <div class="item-top"><span class="code">K4g</span>
+              <h3>Hau Kau Garnelen</h3><span class="price">4&nbsp;St. / 5,90&nbsp;€</span>
+            </div>
+            <p class="allergens">Allergene: B, F</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">K6</span>
-              <h3>Tempura</h3><span class="price">5,20&nbsp;€</span>
+              <h3>Garnele Tempura</h3><span class="price">5,20&nbsp;€</span>
             </div>
-            <p>Garnelen-Tempura, leichter knuspriger Teig (2 Stück)</p>
+            <p>Tempura-frittierte Garnelen (4 Stück) in einem leichten, knusprigen Teig</p>
+            <p class="allergens">Allergene: A, B, F</p>
           </article>
         </div>
 
-        <div class="category-bar">Fried Chicken <span>Drumettes · 5 St. 7,90&nbsp;€ / 8 St. 11,90&nbsp;€</span></div>
+        <div class="category-bar">Fried Chicken <span>4 St. 6,40&nbsp;€ · 8 St. 11,90&nbsp;€</span></div>
         <div class="item-grid">
           <article class="item">
             <div class="item-top"><span class="code">F1</span>
-              <h3>Original Fried Chicken</h3>
+              <h3>Original Fried Chicken (Drumettes)</h3>
             </div>
-            <p>Golden frittiert, crunchy außen, saftig innen — der Klassiker</p>
+            <p>Pure &amp; simple — golden frittiert, crunchy außen, saftig innen. Der Klassiker.</p>
+            <p class="allergens">Allergene: A, C, L, 5, 8, 15</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">F2</span>
-              <h3>Red Chili Cheese Powder</h3>
+              <h3>Korean Fried Chicken mit süß-scharfer Sauce</h3>
             </div>
-            <p>Eingerollt in feurigem Chili-Cheese-Powder</p>
+            <p class="allergens">Allergene: A, C, F, J, K, 6, 10</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">F3</span>
-              <h3>Honey-Mustard Chicken</h3>
+              <h3>Korean Fried Chicken mit Knoblauch-Sojasauce</h3>
             </div>
-            <p>Süß trifft pikant — goldene Honey-Senf-Glaze</p>
+            <p class="allergens">Allergene: A, C, F, J, K, L, 6, 10</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">F4</span>
-              <h3>Golden Curry Chicken</h3>
+              <h3>Korean Fried Chicken mit scharfer Mayonnaise</h3>
             </div>
-            <p>Aromatisches Curry-Powder auf crispy Chicken</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">F5</span>
-              <h3>Thai-Chili Chicken</h3>
-            </div>
-            <p>Thailändische Chili-Würze</p>
+            <p class="allergens">Allergene: A, C, F, J, G, 6, 10</p>
           </article>
         </div>
       </div>
@@ -371,19 +382,16 @@
             <div class="item-top"><span class="code">S1</span>
               <h3>Scharfe Rindfleischsuppe</h3><span class="price">12,90&nbsp;€</span>
             </div>
-            <p>Würzig, feurig, sättigend — Rindfleisch, Gemüse &amp; Power-Brühe</p>
+            <p>Würzig, feurig, sättigend — Rindfleisch, Gemüse &amp; Power-Brühe für echte Suppenfans</p>
+            <p class="allergens">Allergene: F, O, 5</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">S2</span>
-              <h3>Algensuppe</h3><span class="price">4,20&nbsp;€</span>
-            </div>
-            <p>Leicht &amp; gesund — frische Algen in klarer Brühe</p>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">S3</span>
               <h3>Kimchi-Tofu-Suppe</h3><span class="price">9,90&nbsp;€</span>
             </div>
-            <p>Spicy Kimchi, Tofu &amp; Gemüse in heißer Brühe — mit einer Portion Reis</p>
+            <p>Spicy Kimchi, Tofu &amp; Gemüse in heißer Brühe — Comfort Food pur. Wie in Korea: jede Suppe kommt
+              mit einer Portion Reis.</p>
+            <p class="allergens">Allergene: F, O, 5</p>
           </article>
         </div>
       </div>
@@ -395,16 +403,11 @@
             <div class="item-top"><span class="code">N1</span>
               <h3>Mochi-Eis</h3><span class="price">4,50&nbsp;€</span>
             </div>
-            <p>Kokos, Matcha oder Mango</p>
+            <p>Kokos, Matcha, Mango</p>
           </article>
           <article class="item">
             <div class="item-top"><span class="code">N2</span>
               <h3>Matcha / Sesam Eis</h3><span class="price">4,50&nbsp;€</span>
-            </div>
-          </article>
-          <article class="item">
-            <div class="item-top"><span class="code">N3</span>
-              <h3>Mango-Pudding</h3><span class="price">3,90&nbsp;€</span>
             </div>
           </article>
         </div>
@@ -412,21 +415,86 @@
 
 
       <div class="panel" data-panel="drinks">
-        <div class="category-bar">Getränke</div>
+        <div class="category-bar">Alkoholfreie Getränke <span>0,2&nbsp;L 2,90&nbsp;€ · 0,4&nbsp;L 3,90&nbsp;€</span>
+        </div>
         <ul class="extras-list">
-          <li><span>Klassische Softgetränke</span><span>4,50&nbsp;€</span></li>
-          <li><span>Hausgemachte Limo</span><span>5,90&nbsp;€</span></li>
-          <li><span>Grüner / Jasmin Tee</span><span>2,50&nbsp;€</span></li>
-          <li><span>Bier vom Fass (0,3&nbsp;L)</span><span>3,60&nbsp;€</span></li>
-          <li><span>Cocktails mit Alkohol</span><span>7,90&nbsp;€</span></li>
-          <li><span>Soju</span><span>12,80&nbsp;€ / Fl.</span></li>
-          <li><span>Rotwein (0,2&nbsp;L)</span><span>5,90&nbsp;€</span></li>
-          <li><span>Weißwein (0,2&nbsp;L)</span><span>5,90&nbsp;€</span></li>
+          <li><span>G1 Coca-Cola</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G2 Coca-Cola Zero</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G3 Fanta</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G4 Eistee</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G5 Milkis</span><span>3,90&nbsp;€</span></li>
+          <li><span>G6 Grüner Tee</span><span>2,50&nbsp;€</span></li>
+          <li><span>G7 Jasmin Tee</span><span>2,50&nbsp;€</span></li>
+          <li><span>G8 Asahi</span><span>4,00&nbsp;€</span></li>
         </ul>
-        <p class="menu-note">Vollständige Getränkekarte im Restaurant erhältlich.</p>
+
+        <div class="category-bar">Flaschengetränke <span>0,2&nbsp;L Flasche 3,90&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G9 Schweppes Bitter Lemon</span><span>3,90&nbsp;€</span></li>
+          <li><span>G10 Schweppes Ginger Ale</span><span>3,90&nbsp;€</span></li>
+          <li><span>G11 Schweppes Tonic Water</span><span>3,90&nbsp;€</span></li>
+          <li><span>G12 Schweppes Wild Berry</span><span>3,90&nbsp;€</span></li>
+        </ul>
+
+        <div class="category-bar">Säfte <span>0,2&nbsp;L 2,90&nbsp;€ · 0,4&nbsp;L 4,90&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G13 Apfelsaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+          <li><span>G14 Orangensaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+          <li><span>G15 Mangosaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+          <li><span>G16 Maracujasaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+          <li><span>G17 Litschisaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+          <li><span>G18 Johannisbeersaft</span><span>2,90&nbsp;€ / 4,90&nbsp;€</span></li>
+        </ul>
+
+        <div class="category-bar">Schorlen <span>0,2&nbsp;L 2,90&nbsp;€ · 0,4&nbsp;L 3,90&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G19 Apfelschorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G20 Orangenschorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G21 Mangoschorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G22 Maracujaschorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G23 Litschischorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+          <li><span>G24 Johannisbeerschorle</span><span>2,90&nbsp;€ / 3,90&nbsp;€</span></li>
+        </ul>
+
+        <div class="category-bar">Biere <span>0,2&nbsp;L 2,90&nbsp;€ · 0,4&nbsp;L 4,20&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G25 Paulaner Münchner Hell</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G26 FB Premium Pilsener</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G27 Paulaner Weißbier Naturtrüb</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G28 Paulaner Ur-Dunkel Naturtrüb</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G29 Paulaner Münchner Hell Alkoholfrei</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G30 Paulaner Weißbier Kristall</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G31 Paulaner Isar Weiße</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G32 Paulaner Weißbier Alkoholfrei</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G33 Paulaner Weißbier Dunkel</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G34 Cola-Weizen</span><span>2,90&nbsp;€ / 4,20&nbsp;€</span></li>
+          <li><span>G35 Radler (0,5&nbsp;L)</span><span>4,20&nbsp;€</span></li>
+          <li><span>G36 Soju</span><span>12,80&nbsp;€ / Fl.</span></li>
+        </ul>
+
+        <div class="category-bar">Rotwein <span>0,2&nbsp;L 5,90&nbsp;€ · Flasche 28,00&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G37 Merlot (trocken)</span><span>5,90&nbsp;€ / 28,00&nbsp;€</span></li>
+          <li><span>G38 Primitivo (trocken)</span><span>5,90&nbsp;€ / 28,00&nbsp;€</span></li>
+          <li><span>G39 Dornfelder (halbtrocken)</span><span>5,90&nbsp;€ / 28,00&nbsp;€</span></li>
+        </ul>
+
+        <div class="category-bar">Weißwein <span>0,2&nbsp;L 5,90&nbsp;€ · Flasche 26,00&nbsp;€</span></div>
+        <ul class="extras-list">
+          <li><span>G40 Pinot (trocken)</span><span>5,90&nbsp;€ / 26,00&nbsp;€</span></li>
+          <li><span>G41 Chardonnay (trocken)</span><span>5,90&nbsp;€ / 26,00&nbsp;€</span></li>
+          <li><span>G42 Riesling (halbtrocken)</span><span>5,90&nbsp;€ / 26,00&nbsp;€</span></li>
+        </ul>
       </div>
 
     </div>
+
+    <div class="category-bar">Allergene &amp; Zusatzstoffe</div>
+    <p class="menu-note">A Glutenhaltig · B Krebstiere · C Eier · D Fisch · E Erdnüsse · F Soja · G Milch ·
+      H Schalenfrüchte · I Sellerie · J Senf · K Sesamsamen · L Schwefeldioxid/Sulfite · M Lupinen · N Weichtiere<br>
+      1 Konservierungsstoff · 2 Farbstoff · 3 Antioxidationsmittel · 4 Süßstoff · 5 Süßungsmittel Aspartam (enthält
+      Phenylalaninquelle) · 6 Phosphat · 7 geschwefelt · 8 chininhaltig · 9 coffeinhaltig · 10 Geschmacksverstärker ·
+      11 geschwärzt · 12 gewachst · 13 gentechnisch</p>
   </section>
 
   <!-- ============ GALLERY (placeholders) ============ 
@@ -465,7 +533,7 @@
 
         <div class="contact-block">
           <p><strong>Adresse</strong><br>Sudetenstraße 8, 87600 Kaufbeuren</p>
-          <p><strong>Telefon</strong><br><a href="tel:+4983419665699">0821 9665699</a></p>
+          <p><strong>Telefon</strong><br><a href="tel:+4983419665699">08341 9665699</a></p>
           <p><strong>Reservierung</strong><br>Für BBQ-Tische empfehlen wir eine Reservierung, besonders am Wochenende.
           </p>
         </div>
@@ -497,10 +565,32 @@
         <a href="#menu">Speisekarte</a>
         <a href="#about">Über uns</a>
         <a href="#visit">Öffnungszeiten</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#" id="cookieSettingsLink">Cookie-Einstellungen</a>
       </nav>
       <p class="footer-copy">© <span id="year"></span> YAMI Ramen &amp; BBQ. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
+
+  <!-- ============ COOKIE BANNER ============
+       DSGVO-konform: bis zur Entscheidung werden nur technisch
+       notwendige Daten (die Cookie-Auswahl selbst) lokal gespeichert.
+       Google Fonts wird erst nach Klick auf "Alle akzeptieren"
+       nachgeladen — vorher greift der lokale Schrift-Fallback.
+       Google Maps bleibt unabhängig davon per eigenem Klick-Gate
+       (siehe "Öffnungszeiten & Lage") geschützt. -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen"
+    hidden>
+    <div class="cookie-banner-inner">
+      <p>Diese Website speichert nur technisch notwendige Daten lokal in Ihrem Browser (z.&nbsp;B. Ihre
+        Cookie-Auswahl). Optional laden wir Google Fonts nach, um unsere Schriftarten darzustellen — dabei wird Ihre
+        IP-Adresse an Google übertragen. Details in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      <div class="cookie-banner-actions">
+        <button class="btn btn-primary" id="cookieDecline" type="button">Nur notwendige</button>
+        <button class="btn btn-primary" id="cookieAccept" type="button">Alle akzeptieren</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
