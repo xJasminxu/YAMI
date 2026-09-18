@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — YAMI Ramen &amp; BBQ</title>
+  <meta name="description" content="Impressum von YAMI Ramen &amp; BBQ.">
+  <meta name="robots" content="noindex">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html#top" class="logo">
+        <span class="logo-mark"><img src="assets/yami-logo.svg" alt="YAMI Logo"></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#menu">Speisekarte</a>
+        <a href="index.html#about">Über uns</a>
+        <a href="index.html#visit">Öffnungszeiten</a>
+        <a class="nav-cta" href="tel:+4983419665699">Reservieren</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ CONTENT ============ -->
+  <section class="legal">
+    <p class="kicker">Rechtliches</p>
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>
+      Yami Ramen&amp;BBQ Restaurants<br>
+      Sudetenstraße 8<br>
+      87600 Kaufbeuren OT Neugablonz
+    </p>
+
+    <h2>Vertreten durch</h2>
+    <p>Xueyan Ye (Geschäftsführer)</p>
+
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href="tel:+4983419665699">08341 9665699</a>
+    </p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-mark"><img src="assets/yami-logo.svg" alt="YAMI Logo"></span>
+      </div>
+      <p class="footer-tag">Restaurant im asiatischen Stil — Signature-Ramen &amp; Korean BBQ</p>
+      <nav class="footer-links">
+        <a href="index.html#menu">Speisekarte</a>
+        <a href="index.html#about">Über uns</a>
+        <a href="index.html#visit">Öffnungszeiten</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> YAMI Ramen &amp; BBQ. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+</body>
+
+</html>
