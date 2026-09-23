@@ -199,6 +199,8 @@ section {
   text-align: center;
   overflow: hidden;
   padding: 2rem 1.5rem;
+  max-width: none;   /* override the global section max-width so the video spans the full viewport */
+  width: 100%;
 }
 
 /* Signature ambient element: soft moving "steam" gradients behind the hero text.
@@ -243,7 +245,7 @@ section {
 }
 
 
-.hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1000px; }
 .hero-image {
   padding: 2rem 0;
   width: 80%;
@@ -256,7 +258,7 @@ section {
   color: var(--muted);
   letter-spacing: 0.08em;
   margin-bottom: 1.5rem;
-  font-size: 1.0rem;
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
 }
 
 .hero-title {
@@ -266,9 +268,9 @@ section {
 
 .hero-sub {
   color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  margin: 1.5rem auto 2.5rem;
-  max-width: 480px;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  margin: 1.75rem auto 2.75rem;
+  max-width: 680px;
 }
 
 .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
