@@ -11,20 +11,34 @@
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
+function setNavOpen(isOpen) {
+  navLinks.classList.toggle('open', isOpen);
   // Keep the button's accessible state in sync with what's visible,
   // so screen readers announce "expanded"/"collapsed" correctly.
   navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+}
+
+navToggle.addEventListener('click', () => {
+  setNavOpen(!navLinks.classList.contains('open'));
 });
 
 // Close the mobile menu automatically once a link is tapped,
 // so the menu doesn't stay open after navigating to a section.
 navLinks.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', () => setNavOpen(false));
+});
+
+// Also close it on Escape, when tapping anywhere outside the nav,
+// or when the screen gets wide enough to show the desktop links.
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setNavOpen(false);
+});
+document.addEventListener('click', (event) => {
+  if (navLinks.classList.contains('open') && !event.target.closest('#nav')) setNavOpen(false);
+});
+window.matchMedia('(min-width: 721px)').addEventListener('change', (mq) => {
+  if (mq.matches) setNavOpen(false);
 });
 
 // ---------- 2) Menu category tabs ----------

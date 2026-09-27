@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121110">
   <title>YAMI — Ramen & BBQ</title>
   <meta name="description"
     content="YAMI Ramen & BBQ — Asiatisches Restaurant mit Signature-Ramen, koreanischem BBQ und mehr.">
@@ -42,7 +43,9 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="hero-steam" aria-hidden="true">
-      <video autoplay muted loop playsinline>
+      <!-- Phones get a 720p re-encode (~2 MB) instead of the 4K original (~41 MB). -->
+      <video autoplay muted loop playsinline preload="auto" poster="assets/showcase_video1-poster.jpg">
+        <source src="assets/showcase_video1-mobile.mp4" type="video/mp4" media="(max-width: 900px)">
         <source src="assets/showcase_video1.mp4" type="video/mp4">
       </video>
       <div class="hero-glow"></div>
@@ -72,10 +75,10 @@
       </div>
       <div class="about-photos">
         <div class="about-photo about-photo-1">
-          <img src="assets/ramen3.jpg" alt="Schüssel Miso Ramen mit Chashu, Ei, Frühlingszwiebeln und Nori" />
+          <img src="assets/ramen3-1600.jpg" srcset="assets/ramen3-800.jpg 800w, assets/ramen3-1600.jpg 1600w" sizes="(max-width: 860px) 100vw, 45vw" width="1600" height="1200" loading="lazy" decoding="async" alt="Schüssel Miso Ramen mit Chashu, Ei, Frühlingszwiebeln und Nori" />
         </div>
         <div class="about-photo about-photo-2">
-          <img src="assets/kbbq2.jpg" alt="Koreanisches BBQ mit Rindfleisch, Gemüse und Beilagen" />
+          <img src="assets/kbbq2-1600.jpg" srcset="assets/kbbq2-800.jpg 800w, assets/kbbq2-1600.jpg 1600w" sizes="(max-width: 860px) 100vw, 45vw" width="1600" height="1067" loading="lazy" decoding="async" alt="Koreanisches BBQ mit Rindfleisch, Gemüse und Beilagen" />
         </div>
       </div>
     </div>
